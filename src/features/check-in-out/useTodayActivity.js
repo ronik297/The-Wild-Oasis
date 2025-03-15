@@ -1,16 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { getStaysTodayActivity } from "../../services/apiBookings";
 
-function useTodayActivity() {
-  const { isLoading, data: activites } = useQuery({
+export function useTodayActivity() {
+  const { isLoading, data: activities } = useQuery({
     queryFn: getStaysTodayActivity,
     queryKey: ["today-activity"],
   });
 
-  return {
-    isLoading,
-    activites,
-  };
+  return { activities, isLoading };
 }
-
-export { useTodayActivity };
