@@ -20,7 +20,7 @@ function ProtectedRoute({ children }) {
     if (!isAuthenticated && !isLoading) {
       navigate("/login");
     }
-  }, [isAuthenticated, isLoading]);
+  }, [isAuthenticated, isLoading, navigate]);
 
   if (isLoading)
     return (
